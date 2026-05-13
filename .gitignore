@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local config (contains API keys!)
+config.yaml
+.env
+.env.local
+*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Runtime / logs
+*.log
+logs/
+recordings/
+*.wav
+*.mp3
+
+# Models (download locally, don't commit)
+models/
+*.bin
+*.gguf
+*.onnx
+
+# Build artifacts
+dist/
+build/

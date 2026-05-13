@@ -1,0 +1,47 @@
+# Copy to config.yaml and fill in. config.yaml is .gitignored.
+
+hardware:
+  servo:
+    i2c_address: 0x40
+    pan_channel: 0
+    tilt_channel: 1
+    pan_min_deg: -75
+    pan_max_deg: 75
+    tilt_min_deg: -30
+    tilt_max_deg: 45
+    smoothing: 0.25   # exponential smoothing factor on target angle
+  camera:
+    width: 1280
+    height: 720
+    fps: 30
+  audio:
+    sample_rate: 16000
+    input_device: null    # null = system default
+    output_device: null
+
+display:
+  fullscreen: true
+  width: 1024
+  height: 600
+  fps: 30
+
+brain:
+  vision:
+    detection_confidence: 0.6
+  listen:
+    vad_aggressiveness: 2   # 0-3
+    silence_ms: 600         # end-of-utterance gap
+  chat:
+    provider: openai        # openai | anthropic
+    model: gpt-4o-mini
+    system_prompt: |
+      You are a small desk companion robot. You are warm, curious, and brief.
+      Reply in 1-3 sentences. End each reply with a JSON tag like
+      {"emotion": "curious", "action": "tilt_curious"} so the body can react.
+  tts:
+    provider: openai
+    voice: alloy
+
+# Put real keys in a separate .env file or your shell environment.
+# OPENAI_API_KEY=...
+# ANTHROPIC_API_KEY=...
